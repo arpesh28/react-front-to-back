@@ -9,10 +9,15 @@ class Contact extends Component {
   };
 
   onDeleteClick = async (id, dispatch) => {
-    //send delete call
-    await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`);
-    // refresh deleted contact call
-    dispatch({ type: "DELETE_CONTACT", payload: id });
+    // try-catch gambiarra
+    try {
+      //send delete call
+      await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`);
+      // refresh deleted contact call
+      dispatch({ type: "DELETE_CONTACT", payload: id });
+    } catch (e) {
+      dispatch({ type: "DELETE_CONTACT", payload: id });
+    }
   };
 
   render() {
