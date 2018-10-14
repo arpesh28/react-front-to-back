@@ -48,6 +48,8 @@ class AddContact extends Component {
       phone: "",
       errors: {}
     });
+    //redirect to the home page with the new contact
+    this.props.history.push("/");
   };
 
   render() {
@@ -123,17 +125,3 @@ class AddContact extends Component {
 }
 
 export default AddContact;
-
-{
-  /* <i
-                  className={
-                    "fas fa-" + (addContact ? "minus" : "plus") + "-circle"
-                  }
-                  style={{
-                    cursor: "pointer",
-                    float: "right",
-                    color: "#076BFF"
-                  }}
-                /> 
-              {addContact ? (: null} */
-}
