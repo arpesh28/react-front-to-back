@@ -26,12 +26,20 @@ class Contacts extends Component {
     ]
   };
 
+  deleteContact = id => {
+    console.log(id);
+  };
+
   render() {
     const { contacts } = this.state;
     return (
       <React.Fragment>
         {contacts.map(contact => (
-          <Contact key={contact.id} contact={contact} />
+          <Contact
+            key={contact.id}
+            contact={contact}
+            onDeleteClickHandler={this.deleteContact.bind(this, contact.id)}
+          />
         ))}
       </React.Fragment>
     );
