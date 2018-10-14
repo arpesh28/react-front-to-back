@@ -70,54 +70,50 @@ class AddContact extends Component {
                   })
                 }
               >
-                Add Contact
                 <i
-                  className={
-                    "fas fa-" + (addContact ? "minus" : "plus") + "-circle"
-                  }
+                  class="fas fa-address-card"
                   style={{
                     cursor: "pointer",
-                    float: "right",
+                    float: "left",
                     color: "#076BFF"
                   }}
-                />
+                />{" "}
+                Add Contact
               </div>
-              {addContact ? (
-                <div className="card-body">
-                  <form onSubmit={this.onSubmit.bind(this, dispatch)}>
-                    <TextInputGroup
-                      label="Nome"
-                      name="name"
-                      placeholder="Insira o nome... "
-                      value={name}
-                      onChange={this.onChange}
-                      error={errors.name}
-                    />
-                    <TextInputGroup
-                      label="Telefone"
-                      name="phone"
-                      placeholder="Insira o Telefone... "
-                      value={phone}
-                      onChange={this.onChange}
-                      error={errors.phone}
-                    />
-                    <TextInputGroup
-                      label="Email"
-                      name="email"
-                      type="email"
-                      placeholder="Insira o email... "
-                      value={email}
-                      onChange={this.onChange}
-                      error={errors.email}
-                    />
-                    <input
-                      type="submit"
-                      value="Add Contact"
-                      className="btn btn-light btn-block"
-                    />
-                  </form>
-                </div>
-              ) : null}
+              <div className="card-body">
+                <form onSubmit={this.onSubmit.bind(this, dispatch)}>
+                  <TextInputGroup
+                    label="Nome"
+                    name="name"
+                    placeholder="Insira o nome... "
+                    value={name}
+                    onChange={this.onChange}
+                    error={errors.name}
+                  />
+                  <TextInputGroup
+                    label="Telefone"
+                    name="phone"
+                    placeholder="Insira o Telefone... "
+                    value={phone}
+                    onChange={this.onChange}
+                    error={errors.phone}
+                  />
+                  <TextInputGroup
+                    label="Email"
+                    name="email"
+                    type="email"
+                    placeholder="Insira o email... "
+                    value={email}
+                    onChange={this.onChange}
+                    error={errors.email}
+                  />
+                  <input
+                    type="submit"
+                    value="Add Contact"
+                    className="btn btn-light btn-block"
+                  />
+                </form>
+              </div>
             </div>
           );
         }}
@@ -127,3 +123,17 @@ class AddContact extends Component {
 }
 
 export default AddContact;
+
+{
+  /* <i
+                  className={
+                    "fas fa-" + (addContact ? "minus" : "plus") + "-circle"
+                  }
+                  style={{
+                    cursor: "pointer",
+                    float: "right",
+                    color: "#076BFF"
+                  }}
+                /> 
+              {addContact ? (: null} */
+}

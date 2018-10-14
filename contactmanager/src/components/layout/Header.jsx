@@ -7,7 +7,7 @@ const Header = props => {
     <nav className="navbar navbar-expand-sm navbar-dark bg-primary mb-3 py-0">
       <div className="container">
         <a href="/" className="navbar-brand">
-          {branding}
+          <i class="far fa-address-book" /> {branding}
         </a>
         <div>
           <ul className="navbar-nav mr-auto">
