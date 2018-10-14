@@ -6,17 +6,19 @@ class Contact extends Component {
     showContactInfo: true
   };
 
-  onShowClick = e => {
-    this.setState({ showContactInfo: !this.state.showContactInfo });
-  };
-
   render() {
     const { name, email, phone } = this.props.contact;
     return (
       <div className="container">
         <div className="card card-body mb-3">
           <h4>
-            {name} <i className="fas fa-sort-down" onClick={this.onShowClick} />
+            {name}{" "}
+            <i
+              className="fas fa-sort-down"
+              onClick={() =>
+                this.setState({ showContactInfo: !this.state.showContactInfo })
+              }
+            />
           </h4>
           <ul className="list-group">
             <li className="list-group-item">Email: {email}</li>
