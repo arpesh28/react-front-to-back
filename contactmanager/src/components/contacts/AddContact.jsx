@@ -4,10 +4,11 @@ import uuid from "uuid";
 import TextInputGroup from "../layout/TextInputGroup";
 class AddContact extends Component {
   state = {
+    addContact: false,
     name: "",
     email: "",
     phone: "",
-    addContact: false
+    errors: {}
   };
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -15,6 +16,21 @@ class AddContact extends Component {
   onSubmit = (dispatch, e) => {
     e.preventDefault();
     const { name, email, phone } = this.state;
+
+    // Check for errors
+    if (name === "") {
+      this.setState({ errors: { name: "Name é obrigatório" } });
+      return;
+    }
+    if (phone === "") {
+      this.setState({ errors: { phone: "Telefone é obrigatório" } });
+      return;
+    }
+    if (email === "") {
+      this.setState({ errors: { email: "Email é obrigatório" } });
+      return;
+    }
+
     // Create Contact object
     const newContact = {
       id: uuid(),
@@ -29,12 +45,13 @@ class AddContact extends Component {
     this.setState({
       name: "",
       email: "",
-      phone: ""
+      phone: "",
+      errors: {}
     });
   };
 
   render() {
-    const { name, email, phone } = this.state;
+    const { name, email, phone, errors } = this.state;
     const { addContact } = this.state;
 
     return (
@@ -74,6 +91,7 @@ class AddContact extends Component {
                       placeholder="Insira o nome... "
                       value={name}
                       onChange={this.onChange}
+                      error={errors.name}
                     />
                     <TextInputGroup
                       label="Telefone"
@@ -81,6 +99,7 @@ class AddContact extends Component {
                       placeholder="Insira o Telefone... "
                       value={phone}
                       onChange={this.onChange}
+                      error={errors.phone}
                     />
                     <TextInputGroup
                       label="Email"
@@ -89,6 +108,7 @@ class AddContact extends Component {
                       placeholder="Insira o email... "
                       value={email}
                       onChange={this.onChange}
+                      error={errors.email}
                     />
                     <input
                       type="submit"
