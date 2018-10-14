@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { PropTypes } from "prop-types";
+import "./Contact.css";
 
 class Contact extends Component {
   render() {

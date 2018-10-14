@@ -2,9 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Header = props => {
+  const { branding } = props;
   return (
     <div>
-      <h1>{props.branding}</h1>
+      <h1 style={headingStyle}>{branding}</h1>
     </div>
   );
 };
@@ -16,5 +17,7 @@ Header.defaultProps = {
 Header.PropTypes = {
   branding: PropTypes.object.isRequired
 };
+
+const headingStyle = { color: "green", fontSize: "50px" };
 
 export default Header;
