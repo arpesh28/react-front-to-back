@@ -54,7 +54,6 @@ class AddContact extends Component {
 
   render() {
     const { name, email, phone, errors } = this.state;
-    const { addContact } = this.state;
 
     return (
       <Consumer>
