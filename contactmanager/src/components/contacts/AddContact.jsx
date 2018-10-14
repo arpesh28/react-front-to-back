@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Consumer } from "../../providers/Context";
-import uuid from "uuid";
+// import uuid from "uuid";
 import TextInputGroup from "../layout/TextInputGroup";
+import axios from "axios";
+
 class AddContact extends Component {
   state = {
     addContact: false,
@@ -33,13 +35,15 @@ class AddContact extends Component {
 
     // Create Contact object
     const newContact = {
-      id: uuid(),
       name,
       email,
       phone
     };
     // call Context API Add Contact action
-    dispatch({ type: "ADD_CONTACT", payload: newContact });
+    //dispatch({ type: "ADD_CONTACT", payload: newContact });
+    axios
+      .post("https://jsonplaceholder.typicode.com/users", newContact)
+      .then(res => dispatch({ type: "ADD_CONTACT", payload: res.data }));
 
     // Clear Form Fields
     this.setState({
@@ -72,7 +76,7 @@ class AddContact extends Component {
                 }
               >
                 <i
-                  class="fas fa-address-card"
+                  className="fas fa-address-card"
                   style={{
                     cursor: "pointer",
                     float: "left",

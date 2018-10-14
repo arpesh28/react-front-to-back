@@ -22,7 +22,7 @@ export default class Test extends Component {
     return (
       <div>
         <h1>{title}</h1>
-        <p>{title}</p>
+        <p>{body}</p>
       </div>
     );
   }
