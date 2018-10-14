@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import { PropTypes } from "prop-types";
 
 class Contact extends Component {
-  state = {};
+  state = {
+    showContactInfo: true
+  };
 
-  onShowClick = e => {};
+  onShowClick = e => {
+    this.setState({ showContactInfo: !this.state.showContactInfo });
+  };
 
   render() {
     const { name, email, phone } = this.props.contact;
