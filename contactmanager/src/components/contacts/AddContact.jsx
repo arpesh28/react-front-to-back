@@ -13,14 +13,22 @@ class AddContact extends Component {
   onSubmit = (dispatch, e) => {
     e.preventDefault();
     const { name, email, phone } = this.state;
+    // Create Contact object
     const newContact = {
       id: uuid(),
       name,
       email,
       phone
     };
-    console.log(newContact);
+    // call Context API Add Contact action
     dispatch({ type: "ADD_CONTACT", payload: newContact });
+
+    // Clear Form Fields
+    this.setState({
+      name: "",
+      email: "",
+      phone: ""
+    });
   };
 
   render() {
