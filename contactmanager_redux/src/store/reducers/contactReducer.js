@@ -19,6 +19,12 @@ const initialState = {
       name: "Henry Johnson",
       email: "henry@gmail.com",
       phone: "333-333-333"
+    },
+    {
+      id: 4,
+      name: "Yang Ricardo",
+      email: "yang@gmail.com",
+      phone: "333-333-333"
     }
   ]
 };
