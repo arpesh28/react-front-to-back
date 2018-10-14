@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Contacts from "./components/contacts/Contacts";
-import Header from "./components/header/Header";
+import Header from "./components/layout/Header";
 import { Provider } from "./providers/Context";
 
 import "bootstrap/dist/css/bootstrap.min.css";
