@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-import "./App.css";
+
 import Contact from "./components/contact/Contact";
 import Header from "./components/header/Header";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 class App extends Component {
   render() {
