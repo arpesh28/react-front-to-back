@@ -20,7 +20,7 @@ class EditClient extends Component {
             </div>
           </div>
           <div className="card">
-            <div className="card-header">Add Client</div>
+            <div className="card-header">Edit Client</div>
             <div className="card-body">
               <form onSubmit={this.onSubmit}>
                 <div className="form-group">
@@ -31,8 +31,7 @@ class EditClient extends Component {
                     className="form-control"
                     minLength="2"
                     required
-                    onChange={this.onChange}
-                    value={client.firstName}
+                    defaultValue={client.firstName}
                   />
                 </div>
                 <div className="form-group">
@@ -43,8 +42,7 @@ class EditClient extends Component {
                     className="form-control"
                     minLength="2"
                     required
-                    onChange={this.onChange}
-                    value={client.lastName}
+                    defaultValue={client.lastName}
                   />
                 </div>
                 <div className="form-group">
@@ -53,8 +51,7 @@ class EditClient extends Component {
                     name="email"
                     type="email"
                     className="form-control"
-                    onChange={this.onChange}
-                    value={client.email}
+                    defaultValue={client.email}
                   />
                 </div>
                 <div className="form-group">
@@ -65,8 +62,7 @@ class EditClient extends Component {
                     className="form-control"
                     minLength="10"
                     required
-                    onChange={this.onChange}
-                    value={client.phone}
+                    defaultValue={client.phone}
                   />
                 </div>
                 <div className="form-group">
@@ -76,8 +72,7 @@ class EditClient extends Component {
                     type="text"
                     className="form-control"
                     minLength="2"
-                    onChange={this.onChange}
-                    value={client.balance}
+                    defaultValue={client.balance}
                   />
                 </div>
                 <input
