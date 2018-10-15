@@ -19,6 +19,12 @@ class AppNavBar extends Component {
     }
   }
 
+  onLogout = e => {
+    e.preventDefault();
+    const { firebase } = this.props;
+    firebase.logout();
+  };
+
   render() {
     const { isAuthenticated } = this.state;
     const { auth } = this.props;
