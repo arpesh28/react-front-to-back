@@ -8,6 +8,11 @@ import Spinner from "../layout/Spinner";
 import classnames from "classnames";
 
 class DetailsClient extends Component {
+  state = {
+    showBalanceUpdate: false,
+    balanceUpdateAmount: ""
+  };
+
   render() {
     const { client } = this.props;
     if (client) {
@@ -52,6 +57,18 @@ class DetailsClient extends Component {
                     >
                       ${parseFloat(client.balance).toFixed(2)}
                     </span>
+                    <small>
+                      <a
+                        href="#!"
+                        onClick={() =>
+                          this.setState({
+                            showBalanceUpdate: !this.state.showBalanceUpdate
+                          })
+                        }
+                      >
+                        <i className="fas fa-pencil-alt" />
+                      </a>
+                    </small>
                   </h3>
                   {/* @todo - balanceform */}
                 </div>
