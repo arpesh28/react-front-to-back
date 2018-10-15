@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 
 const Alert = props => {
-  const { message, messageType } = this.props;
+  const { message, messageType } = props;
   return (
     <div
       className={classnames("alert", {
